@@ -1,6 +1,6 @@
 DOCKERHUB_REPONAME=ghcr.io/kumanoryo
 CONTAINER_NAME=packer
-TAG_NAME=test.1.1
+TAG_NAME=test.1.7
 
 MAKEFILE_DIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 WORK_DIR=$(MAKEFILE_DIR)
