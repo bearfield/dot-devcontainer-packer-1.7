@@ -1,0 +1,20 @@
+FROM ghcr.io/kumanoryo/debian-fish:bullseye
+#
+# set argument
+ARG PACKER_VERSION=1.7.*
+#
+# Add HashiCorp Linux repository and install packer.
+USER root
+SHELL ["/bin/bash", "-c"]
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+    && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list \
+    && apt-get update \
+    && apt-get install -y \
+        packer=$PACKER_VERSION \
+    # crean up
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+	&& rm -rf /var/lib/apt/lists/*
+#
+# set env
+ENV DEBIAN_FRONTEND=dialog
