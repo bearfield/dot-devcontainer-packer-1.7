@@ -24,5 +24,12 @@
     ],
 
     "extensions": [
+        "gruntfuggly.todo-tree",
+        "github.vscode-pull-request-github",
+        "hediet.vscode-drawio",
+        "redhat.vscode-yaml",
+        "pkief.material-icon-theme",
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format"
 	]
 }
